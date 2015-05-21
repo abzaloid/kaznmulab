@@ -78,6 +78,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>ПОЧЕМУ МЫ?</h3>
 				</div>
 				<div class="services-section-grids">
+				<div class="row">
 					<div class="col-md-4 services-section-grid">
 						<div class="services-section-grid-head">
 							<div class="service-icon">
@@ -111,6 +112,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="clearfix"></div>
 						</div>
 					</div>
+					</div>
+									<div class="row">
+
 					<div class="col-md-4 services-section-grid">
 						<div class="services-section-grid-head">
 							<div class="service-icon">
@@ -144,7 +148,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 							<div class="clearfix"></div>
 						</div>
-					</div>					
+					</div>			
+					</div>		
 				<div class="clearfix"></div>
 				</div>
 			</div>
@@ -243,10 +248,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="contact-form">
 					<div class="container">
-						<form>
-							<input type="text" class="text" value="Имя" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Имя';}">
-							<input type="text" class="text" value="Электронный адрес" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Электронный адрес';}">
-							<textarea onfocus="if(this.value == 'Сообщение:') this.value='';" onblur="if(this.value == '') this.value='Ваше сообщение';" >Сообщение</textarea>
+						<form method="post">
+							<input type="text" class="text" name="name" value="Имя" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Имя';}">
+							<input type="text" class="text" name = "e-mail" value="Электронный адрес" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Электронный адрес';}">
+							<textarea onfocus="if(this.value == 'Сообщение:') this.value='';" onblur="if(this.value == '') this.value='Ваше сообщение';" name="message" >Сообщение</textarea>
 							<input type="submit" value="Отправить">
 						</form>
 					</div>

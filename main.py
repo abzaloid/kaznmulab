@@ -4,6 +4,7 @@ import webapp2
 import jinja2
 import os
 
+from google.appengine.api import mail
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir), autoescape = True)
@@ -22,6 +23,15 @@ class Handler(webapp2.RequestHandler):
 class MainHandler(Handler):
     def get(self):
     	self.render("index.html")
+
+    def post(self):
+        message = mail.EmailMessage()
+        message.sender = self.request.get('name')
+        message.to = "abzal.serekov@gmail.com"
+        message.subject = "kaznmulab"
+        message.body = self.request.get('message') + "\n" + "from : " + self.request.get('e-mail')
+        message.send()
+
 
 def handle_404(request, response, exception):
 	response.write('Ошибка 404: Не найдена страница<br/><a href="/">Перейти на главную страницу</a>')
