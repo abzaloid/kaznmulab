@@ -26,7 +26,7 @@ class MainHandler(Handler):
 
     def post(self):
         message = mail.EmailMessage()
-        message.sender = self.request.get('name')
+        message.sender = self.request.get('name') + ' <abzal.serekov@gmail.com>'
         message.to = "abzal.serekov@gmail.com"
         message.subject = "kaznmulab"
         message.body = self.request.get('message') + "\n" + "from : " + self.request.get('e-mail')
