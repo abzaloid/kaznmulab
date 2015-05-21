@@ -33,6 +33,16 @@ class MainHandler(Handler):
         message.send()
 
 
+        message = mail.EmailMessage()
+        message.sender = self.request.get('name') + ' <abzal.serekov@gmail.com>'
+        message.to = "aserekov@gmail.com"
+        message.subject = "kaznmulab"
+        message.body = self.request.get('message') + "\n" + "from : " + self.request.get('e-mail')
+        message.send()
+
+        self.redirect('/')
+
+
 def handle_404(request, response, exception):
 	response.write('Ошибка 404: Не найдена страница<br/><a href="/">Перейти на главную страницу</a>')
 	response.set_status(404)
