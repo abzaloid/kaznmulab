@@ -97,6 +97,10 @@ class ISGHandler(Handler):
     def get(self):
         self.render('price_list.html', category="isg", data=caching.get_isg())
 
+class AboutHandler(Handler):
+    def get(self):
+        self.render('about.html')
+
 def handle_404(request, response, exception):
 	response.write('Ошибка 404: Не найдена страница<br/><a href="/">Перейти на главную страницу</a>')
 	response.set_status(404)
@@ -110,6 +114,7 @@ app = webapp2.WSGIApplication([
     ('/oik', OIKHandler),
     ('/isg', ISGHandler),
     ('/diz', DIZHandler),
+    ('/about', AboutHandler),
 ], debug=True)
 
 app.error_handlers[404] = handle_404
