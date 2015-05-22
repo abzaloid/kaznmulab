@@ -100,6 +100,14 @@ label{
 .top-menu ul li a:hover {
 	border-bottom:3px solid #1c9fda;	
 }
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 .header-info {
 	padding-top:9em;
 }
@@ -109,7 +117,10 @@ label{
 	font-size:3.2em;
 	font-weight:700;
 	letter-spacing:8px;
+	background-color: rgba(0,0,0,0.5);
 }
+
+
 .header-info p {
 	color:#fff;
 	font-size:1.35em;
@@ -117,6 +128,7 @@ label{
 	line-height:1.7em;
 	width:80%;
 	margin:3em auto 4em;
+	background-color: rgba(0,0,0,0.2);
 }
 .services-section{
 	padding:5em 0;
@@ -2417,4 +2429,20 @@ i.f_mail {
 
 .btn-front:hover {
   background-color: #f77066;
+}
+
+#imaginary_container{
+    margin-top:20%; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
 }

@@ -1,0 +1,179 @@
+<html>
+<head>
+<title>Прайслист | НКДЛ </title>
+<script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<style type="text/css">@import url("css/style.css");</style>
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/js/move-top.js"></script>
+<script type="text/javascript" src="/js/easing.js"></script>  
+<link rel="stylesheet" href="/css/price_list.css">
+</head>
+<body>
+<div class = "navbar navbar-fixed-top">
+<div class="header" id="home" style="min-height:90px;">
+    <div class="container">
+      <div class="header-top">
+        <div class="logo">
+          <a href="/"><img src="images/logo-kaz.png" alt="" /></a>
+        </div>
+        <div class="top-menu">
+        <span class="menu"> </span>
+          <ul>
+            <li><a class="active scroll" href="/#home">Главная</a></li>
+            <li><a class="scroll" href="/#why">Почему мы</a></li>
+            <li><a class="scroll" href="/#services">Наши услуги</a></li>
+            <li><a class="scroll" href="/#certificates">Сертификаты</a></li>
+            <li><a class="scroll" href="/#contact">Обратная связь</a></li>
+            <li><a class="scroll" href="/#vniz">О нас</a></li>
+            <li><a class="scroll" href="/#vniz">Контакты</a></li>
+          </ul>
+        </div>
+            <!-- script-for-menu -->
+            <script>
+              $("span.menu").click(function(){
+                $(".top-menu ul").slideToggle("slow" , function(){
+                });
+              });
+            </script>
+            <!-- script-for-menu -->
+        <div class="clearfix"></div>
+      </div>
+     </div>
+  </div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+
+
+<div class="container">
+    <div class="row ">
+        <div class="col-sm-4" >
+        <div data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+          <nav class="nav-sidebar">
+                <ul class="nav">
+                    <li class="active" id = "oik"><a href="/oik">ОБЩЕКЛИНИЧЕСКИЕ ИССЛЕДОВАНИЯ КРОВИ</a></li>
+                    <li id = "bik"><a href="/bik">БИОХИМИЧЕСКИЕ ИССЛЕДОВАНИЯ КРОВИ</a><input type="hidden" value="bik"></li>
+                    <li id = "isg"><a href="/isg">ИССЛЕДОВАНИЕ СОДЕРЖАНИЯ ГОРМОНОВ</a></li>
+                    <li id = "diz"><a href="/diz">ДИАГНОСТИКА ИНФЕКЦИОННЫХ ЗАБОЛЕВАНИЙ</a></li>
+                    <li id = "bi"><a href="/bi">БАКТЕРИОЛОГИЧЕСКИЕ ИССЛЕДОВАНИЯ</a></li>
+                </ul>
+            </nav>
+        </div>
+        </div>
+        <div class="col-sm-8">
+       <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Услуги</h3>
+            <div class="pull-right">
+              <span class="clickable filter" data-toggle="tooltip" title="Скрыть поиск" data-container="body">
+                <i class="glyphicon glyphicon-filter"></i>
+              </span>
+            </div>
+          </div>
+          <div class="panel-body">
+            <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Введите тип анализа, напр. Краснуха" />
+          </div>
+          <table class="table table-hover" id="dev-table">
+            <thead>
+              <tr>
+                <th>Наименование</th>
+                <th>Категория</th>
+                <th>Цена (тг)</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% if data %}
+            {% for item in data %}
+              <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.price}}</td>
+              </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+          </table>
+        </div>
+        </div>
+</div>
+
+</div>
+
+<script>
+   $(".nav > li").click(function () {
+    var curActive = $(this).parent().find("li.active");
+    curActive.removeClass("active");
+    var activeTable = curActive.find("input").attr('value');
+    $("#"+activeTable).attr('style','display:none;');
+    $(this).addClass("active");
+    var newTable = $(this).find('input').attr('value');
+    $("#"+newTable).attr('style','');
+   });  
+</script>
+
+ <script type="text/javascript">
+(function(){
+    'use strict';
+  var $ = jQuery;
+  $.fn.extend({
+    filterTable: function(){
+      return this.each(function(){
+        $(this).on('keyup', function(e){
+          $('.filterTable_no_results').remove();
+          var $this = $(this), 
+                        search = $this.val().toLowerCase(), 
+                        target = $this.attr('data-filters'), 
+                        $target = $(target), 
+                        $rows = $target.find('tbody tr');
+                        
+          if(search == '') {
+            $rows.show(); 
+          } else {
+            $rows.each(function(){
+              var $this = $(this);
+              $this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
+            })
+            if($target.find('tbody tr:visible').size() === 0) {
+              var col_count = $target.find('tr').first().find('td').size();
+              var no_results = $('<tr class="filterTable_no_results"><td colspan="'+col_count+'">Не найдено совпадений</td></tr>')
+              $target.find('tbody').append(no_results);
+            }
+          }
+        });
+      });
+    }
+  });
+  $('[data-action="filter"]').filterTable();
+})(jQuery);
+
+$(function(){
+    // attach table filter plugin to inputs
+  $('[data-action="filter"]').filterTable();
+  
+  $('.container').on('click', '.panel-heading span.filter', function(e){
+    var $this = $(this), 
+      $panel = $this.parents('.panel');
+    
+    $panel.find('.panel-body').slideToggle();
+    if($this.css('display') != 'none') {
+      $panel.find('.panel-body input').focus();
+    }
+  });
+  $('[data-toggle="tooltip"]').tooltip();
+})
+</script>
+<script type="text/javascript">
+  $("#{{category}}").parent().find("li.active").removeClass("active");
+  $("#{{category}}").addClass("active");  
+</script>
+</body>
+</html>
