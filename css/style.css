@@ -225,9 +225,9 @@ i.project {
 	-o-box-sizing: border-box;
 	width: 25%;
 	display:none;
-	float:left;
 	overflow:hidden;
-	margin: 0;
+	margin-left: 37%;
+	margin-right: 50%;
 }
 div#portfoliolist {
 	padding: 0px 0px;

@@ -8,6 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Добро пожаловать | НКДЛ </title>
+<script src="/js/jquery.min.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
@@ -20,7 +21,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <style type="text/css">@import url("css/style.css");</style>
 <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
-<script src="/js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -308,23 +308,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="portfolio-wrapper grid_box">		
 						<a href="images/certificate.jpg" class="swipebox"  title="Сертификат"> <img src="images/certificate.jpg" class="img-responsive" alt=""><span class="zoom-icon"></span> </a>
 					</div>
-				</div>				
-				<div class="portfolio card mix_all  wow bounceIn" data-wow-delay="0.4s" data-cat="card" style="display: inline-block; opacity: 1;">
-					<div class="portfolio-wrapper grid_box">		
-						<a href="images/certificate.jpg" class="swipebox"  title="Сертификат"> <img src="images/certificate.jpg" class="img-responsive" alt=""><span class="zoom-icon"></span> </a>
-					</div>
-				</div>	
-				<div class="portfolio card mix_all  wow bounceIn" data-wow-delay="0.4s" data-cat="card" style="display: inline-block; opacity: 1;">
-					<div class="portfolio-wrapper grid_box">		
-						<a href="images/certificate.jpg" class="swipebox"  title="Сертификат"> <img src="images/certificate.jpg" class="img-responsive" alt=""><span class="zoom-icon"></span> </a>
-					</div>
-				</div>				
-				<div class="portfolio card mix_all  wow bounceIn" data-wow-delay="0.4s" data-cat="card" style="display: inline-block; opacity: 1;">
-					<div class="portfolio-wrapper grid_box">		
-						<a href="images/certificate.jpg" class="swipebox"  title="Сертификат"> <img src="images/certificate.jpg" class="img-responsive" alt=""><span class="zoom-icon"></span> </a>
-					</div>
-				</div>				
-			
+				</div>							
 				<div class="clearfix"></div>					
 			</div>			
 			<div class="clearfix"></div>	
@@ -363,7 +347,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="container">
 					<div class="col-md-6 footer-grid">
 						<h4>О нас</h4>
-						<p>Научно-образовательная лаборатория  создана  в соответствии с организационной структурой Университета, утвержденной решением Ученого совета (Приказ № 255 от 08.07.2008 года) и является учебно-вспомогательным подразделением КазНМУ им. С.Д. Асфендиярова и переименована лаборатория с научно-образовательной в научную клинико-диагностическую лабораторию (НКДЛ) (приказ № 4594 от 30.10.2013г). НКДЛ - это современный технопарк в Научно-Исследовательском иституте фундаментальной и прикладной медицины имени Б.А.Атчабарова, который входит в структуру КазНМУ имени С.Д.Асфендиярова. <a href="/about">Подробнее...</a></p>
+						<p>Научная клинико-диагностическая лаборатория КазНМУ (НКДЛ) - это современный технопарк в Научно-Исследовательском иституте фундаментальной и прикладной медицины имени Б.А.Атчабарова, который входит в структуру КазНМУ имени С.Д.Асфендиярова.
+						<a href="/about">
+						<button type="button" class="btn btn-default" >
+						  Подробнее
+						</button></a>
+						</p>
 					</div>
 					<div class="col-md-3 footer-grid">
 						<h4>Наши контакты</h4>
@@ -388,9 +377,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</ul>
 						<ul class="address">
 						<li>
-								<div class="col-md-4"><a href="#"><i class="fa fa-facebook fa-2x"></i></a></div>
-								<div class="col-md-4"><a href="#"><i class="fa fa-google-plus fa-2x"></i></a></div>
-								<div class="col-md-4"><a href="#"><i class="fa fa-vk fa-2x"></i></a></div>
+								<div class="col-md-4"><a href="https://www.facebook.com/kaznmulab"><i class="fa fa-facebook fa-2x"></i></a></div>
+								<div class="col-md-4"><a href="https://vk.com/public93446142"><i class="fa fa-vk fa-2x"></i></a></div>
 						</li>
 						</ul>
 					</div>
@@ -422,6 +410,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							
 							$().UItoTop({ easingType: 'easeOutQuart' });
 							
+								<script type="text/javascript">
+								$(".button-fill").hover(function () {
+								$(this).children(".button-inside").addClass('full');
+								}, function() {
+								$(this).children(".button-inside").removeClass('full');
+								});
+								</script>	
 						});
 					</script>
 				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
