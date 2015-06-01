@@ -64,3 +64,13 @@ def get_diz(update = False):
         items = list(db.GqlQuery("SELECT * FROM DIZ"))
         store(key, items)
     return items
+
+
+def get_all(update = False):
+    key = "my_all"
+    items = retrieve(key)
+    if items is None or update:
+        items = []
+        items = get_bi() + get_diz() + get_isg() + get_oik() + get_bik()
+        store(key, items)
+    return items

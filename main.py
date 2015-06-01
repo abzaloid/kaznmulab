@@ -73,9 +73,13 @@ class DatabaseHandler(Handler):
 
 class PriceListHandler(Handler):
     def get(self):
-        self.render('price_list.html', category="oik", data=caching.get_oik())
+        self.render('price_list.html', category="all", data=caching.get_all())
     def post(self):
         pass
+
+class ALLHandler(Handler):
+    def get(self):
+        self.render('price_list.html', category="all", data=caching.get_all())
 
 class BIHandler(Handler):
     def get(self):
@@ -114,6 +118,7 @@ app = webapp2.WSGIApplication([
     ('/oik', OIKHandler),
     ('/isg', ISGHandler),
     ('/diz', DIZHandler),
+    ('/all', ALLHandler),
     ('/about', AboutHandler),
 ], debug=True)
 
